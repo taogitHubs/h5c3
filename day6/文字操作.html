@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	canvas{
+        		border:1px solid red;
+        	}
+        </style>
+    </head>
+    <body>
+    	 <canvas width="600" height="400"></canvas>
+	 <script type="text/javascript">
+	 	 //获取canvas画布对象
+	 	 var canvas =document.querySelector("canvas");
+	 	 //获取绘图上下文
+	 	 var ctx=canvas.getContext("2d");
+	 	 ctx.font="50px 楷体" 
+	 	 ctx.textAlign="center"//水平对齐方式
+	 	 ctx.textBaseline="middle"//垂直居中
+	 	 // ctx.strokeText("涛", 300,200)//文字镂空
+	 	 ctx.fillText("今天天气不错", 300,200)
+	 	 ctx.beginPath()
+	 	 // var wz=ctx.measureText("今天天气不错").width
+
+	 	 // var mr_l=50;
+	 	 // var mr_r=50;
+	 	 // var mr_b=30;
+	 	 // var x=300-mr_l
+	 	 // var y=200+mr_b
+	 	 // var end_x=300+wz+mr_r
+	 	 // ctx.moveTo(x, y)
+	 	 // ctx.lineTo(end_x, y)
+	 	 // ctx.stroke()
+
+	 	 
+	 	</script>
+    </body>
+</html>

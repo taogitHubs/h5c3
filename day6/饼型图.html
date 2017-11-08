@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<canvas width="600px" height="400px"></canvas>
+    	<script>
+    		var canvas=document.querySelector("canvas")
+    		var ctx=canvas.getContext("2d")
+   			var du=[30,60,90,180]
+   			var qis=90
+    		var arr=["red","blue","yellow","pink"]
+    		
+    			for(var i=0;i<du.length;i++){
+					ctx.beginPath()
+    				ctx.moveTo(300, 200)
+    				ctx.arc(300, 200, 100, aTor(qis), aTor(qis+=du[i]))	
+    				ctx.fillStyle=arr[i]
+
+    				ctx.fill()
+
+    		}
+    		
+    		
+
+
+    		 function aTor ( angle ) {
+		 	 	 return  angle*Math.PI/180;
+	 		 }
+    	</script>
+    </body>
+</html>

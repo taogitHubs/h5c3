@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	  	<canvas width="600px" height="400px"></canvas>
+    	<script>
+    		var canvas=document.querySelector("canvas")
+    		var ctx=canvas.getContext("2d")
+    		var qis=-90
+    		var fx=random(1,100)
+    		var arr=[]
+    		var sum=0
+    		for (var i = 0; i < fx; i++) {
+    			arr.push(random(1,100))	
+    			sum+=arr[i]
+    		}
+    		var ary=[]
+    		for (var i = 0; i < fx; i++) {
+    			ary.push(360*arr[i]/sum)
+    		}
+
+    		for (var i = 0; i < ary.length; i++) {
+    			ctx.beginPath()
+    			ctx.moveTo(300, 200)
+    			ctx.fillStyle="rgb("+random(0,255)+","+random(0,255)+","+random(0,255)+")"
+    			ctx.arc(300, 200, 100, aTor(qis), aTor(qis+=ary[i]))
+    			ctx.fill()
+    		}
+
+
+ 			function random( min,max ){
+	 	 	 	return  Math.floor(Math.random()*(max-min))+min;
+	 	 	}
+    		function aTor ( angle ) {
+		 	 	 return angle*Math.PI/180;
+	 		}
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+           <style>
+        	canvas{
+				border:1px solid red;
+        	}
+        </style>
+    </head>
+    <body>
+    	<canvas width="600px" height="600"></canvas>
+    	<script>
+ 			var canvas=document.querySelector("canvas")
+    		var ctx=canvas.getContext("2d")
+    		ctx.moveTo(200,0)
+    		ctx.lineTo(200,600)
+    		ctx.stroke()
+    		ctx.beginPath()
+
+    		ctx.moveTo(400,0)
+    		ctx.lineTo(400,600)
+    		ctx.stroke()
+    		ctx.beginPath()
+
+    		ctx.moveTo(50,200)
+    		ctx.lineTo(150,200)
+    		ctx.stroke()
+    		ctx.beginPath()
+
+    		ctx.moveTo(50,400)
+    		ctx.lineTo(150,400)
+    		ctx.stroke()
+    		ctx.beginPath()
+
+    		ctx.moveTo(50,200)
+    		ctx.lineTo(50,400)
+    		ctx.stroke()
+    		ctx.beginPath()
+
+    		ctx.moveTo(150,200)
+    		ctx.lineTo(150,400)
+    		ctx.stroke()
+    		ctx.beginPath()
+
+    		ctx.moveTo(250,200)
+    		ctx.lineTo(350,400)
+    		ctx.stroke()
+    		ctx.beginPath()
+
+    		ctx.moveTo(250,200)
+    		ctx.lineTo(250,400)
+    		ctx.stroke()
+    		ctx.beginPath()
+
+    		ctx.moveTo(250,400)
+    		ctx.lineTo(350,400)
+    		ctx.stroke()
+    		ctx.beginPath()//新的图层
+
+    		ctx.moveTo(450,200)
+    		ctx.lineTo(550,200)
+    		ctx.lineTo(525,400)
+    		ctx.lineTo(475,400)
+    		ctx.closePath()//自动闭合
+    		// ctx.lineTo(450,200)
+    		ctx.stroke()
+
+    	</script>
+    </body>
+</html>

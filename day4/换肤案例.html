@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style style="display:block;" contenteditable>
+    		.box{
+    			width:600px;
+    			height:300px;
+    			border:1px solid red;
+    			margin:200px auto;
+
+    		}
+    		.hz{
+    			margin-top:20px
+    		}
+			span{
+				width:100px;
+				height:50px;
+				display: inline-block;
+				text-align:center;
+				line-height:50px;
+				color:#fff;
+			}
+		</style>
+    </head>
+    <body>
+    	    
+    	<input type="color" name="color">
+		<div class="hz"></div>
+    	<div class="box">
+    	</div>
+    	<script>
+    		var color= document.querySelector("input");
+    		var hz= document.querySelector(".hz");
+    		var box= document.querySelector(".box");
+    		var span
+    		if(localStorage.getItem("color")){
+    			var cor=localStorage.getItem("color")
+    			var arr=JSON.parse(cor)
+    			for(var i=0; i<arr.length;i++){
+    				span=document.createElement("span")
+    				span.style.backgroundColor=arr[i].color
+    				span.innerHTML=arr[i].color
+    				hz.appendChild(span)
+    			}
+    			color.addEventListener('change',function(e){
+    				var ys=	color.value
+    				var obj={}
+    				obj.color=ys
+    				arr.push(obj)
+    				localStorage.setItem("color",JSON.stringify(arr));
+    				span=document.createElement("span")
+    				span.style.backgroundColor=arr[arr.length-1].color
+    				span.innerHTML=arr[arr.length-1].color
+    				hz.appendChild(span)
+    			})
+    			hz.addEventListener("click",function(e){
+                    // console.log(1)
+    				if(e.target.nodeName.toLowerCase() =="span"){
+    					box.style.backgroundColor=e.target.innerText
+    				}
+    			})
+    		}else{
+    			var arr=[]
+    			color.addEventListener('change',function(e){
+    				var ys=	color.value
+    				var obj={}
+    				obj.color=ys
+    				arr.push(obj)
+    				localStorage.setItem("color",JSON.stringify(arr));
+    				span=document.createElement("span")
+    				span.style.backgroundColor=arr[arr.length-1].color
+    				span.innerHTML=arr[arr.length-1].color
+    				hz.appendChild(span)
+    			})
+    			hz.addEventListener("click",function(e){
+    				if(e.target.nodeName.toLowerCase() =="span"){
+    					box.style.backgroundColor=e.target.innerText
+    				}
+    			})
+    		}
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+    		 .box {
+		 	 width: 200px;
+		 	 height: 200px;
+		 	 border: 1px solid red;
+		 	 display: inline-block;
+		 }
+
+		 .target {
+		 	 width: 100px;
+		 	 height: 100px;
+		 	 background-color: pink;
+		 	 display: inline-block;
+		 }
+
+    </style>
+    <body>
+    	<div class="box"></div>
+	  	<span class="target" draggable="true" id="target"></span>
+    	<script>
+    		var box=document.querySelector(".box");
+	  	  	var span=document.querySelector(".target");
+	  	      span.ondragstart=function(e){
+
+	  	      	    e.dataTransfer.setData("text","target");
+	  	      }
+
+	  	      box.ondrop=function(e){
+	  	      	 var id= e.dataTransfer.getData("text");
+	  	      	 var span=document.getElementById(id);
+	  	      	 e.target.appendChild(span);
+	  	      }
+	  	      box.ondragover=function(e){
+	  	      	  e.preventDefault();
+	  	      }
+	  	       document.body.ondrop=function(e){
+	  	      	 var id= e.dataTransfer.getData("text");
+	  	      	 var span=document.getElementById(id);
+	  	      	 e.target.appendChild(span);
+	  	      }
+	  	      document.body.ondragover=function(e){
+	  	      		e.preventDefault();
+	  	      }
+    	</script>
+    </body>
+</html>

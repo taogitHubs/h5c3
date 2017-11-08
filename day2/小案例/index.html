@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 100%;
+            height: 100%;
+            background-color: #2fc3a3;
+            position: absolute;
+        }
+        .left{
+            width: 529px;
+            height: 66px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-130%,150px);
+        }
+        .left img{
+            position: absolute;
+            top: 0;
+        }
+        .left .txt{
+            top: 20px;
+            left: 20px;
+        }
+        .left .result{
+            /*display: none;*/
+            top: -340px;
+        }
+        .right{
+            position: absolute;
+            left:50%;
+            transform:translate(0,150px)
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <img class="ipt" src="img/search.png" alt=""/>
+            <img class="txt" src="img/key.png" alt=""/>
+            <img class="result" src="img/result.png" alt=""/>
+        </div>
+        <div class="right">
+            <img src="img/text.png" alt=""/>
+        </div>
+    </div>
+</body>
+</html>

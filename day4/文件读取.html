@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<style>
+		</style>
+    </head>
+    <body>
+    	<input type="file" name="">
+		<script type="text/javascript">
+			var file_btn=document.querySelector("input");
+			var style=document.querySelector("style");
+
+			file_btn.onchange=function(){
+				var file=this.files[0];
+				var read=new FileReader();
+				read.readAsText(file);
+				read.onload=function(){
+					var cs=read.result
+					style.innerHTML+=cs
+				}
+			}
+		</script>
+    </body>
+</html>

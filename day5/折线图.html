@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	canvas{
+        		border:1px solid #ccc;
+        	}
+        </style>
+    </head>
+    <body>
+    <canvas width="600px" height="400px"></canvas>
+    <script>
+    	    var canvas=document.querySelector("canvas")
+    		var ctx=canvas.getContext("2d")
+    		var count=6
+    		var lin=canvas.height/count
+    		var kua=canvas.width/count
+    		for(var i=0;i<kua;i++){
+    			ctx.moveTo(i*count, 0)
+    			ctx.lineTo(i*count,400)
+    			ctx.strokeStyle="#ccc"
+    			ctx.stroke()
+    			ctx.beginPath()
+    		}
+    		
+    		for(var i=0;i<lin;i++){
+    			ctx.moveTo(0, i*count)
+    			ctx.lineTo(canvas.width,i*count)
+    			ctx.strokeStyle="#ccc"
+    			ctx.stroke()
+    			ctx.beginPath()
+    		}
+    		// 竖坐标轴
+    		ctx.moveTo(count*2,count*2)
+    		ctx.lineTo(count*2,canvas.height-count*2) 
+    		ctx.strokeStyle="red"
+    		ctx.stroke()
+    		ctx.beginPath()
+    		// 横坐标轴
+    		ctx.moveTo(count*2,count*2)
+    		ctx.lineTo(count, count*3)
+    		ctx.lineTo(count*3,count*3)
+    		ctx.strokeStyle="#ccc"
+    		ctx.fillStyle="blue"
+    		ctx.fill()
+    		ctx.beginPath()
+    		// 竖三角形
+    		ctx.moveTo(count*2,canvas.height-count*2)
+    		ctx.lineTo(canvas.width-count*2,canvas.height-count*2) 
+    		ctx.strokeStyle="red"
+    		ctx.stroke()
+    		ctx.beginPath()
+    		// 横三角形
+    		ctx.moveTo(canvas.width-count*2,canvas.height-count*2) 
+    		ctx.lineTo(canvas.width-count*3,canvas.height-count*3) 
+    		ctx.lineTo(canvas.width-count*3,canvas.height-count) 
+    		ctx.strokeStyle="#ccc"
+    		ctx.fill()
+    		ctx.beginPath()
+    		
+    		var pint=6
+
+    		var list=random(3,10)
+    		var arr=[]
+    		for(var i=0;i<list;i++){
+    			var y=count*random(1,lin-1)
+				var x=count*random(2,kua-2)
+				ctx.moveTo(x-pint/2, y-pint/2)
+    			ctx.lineTo(x+pint/2, y-pint/2)
+    			ctx.lineTo(x+pint/2, y+pint/2)
+    			ctx.lineTo(x-pint/2, y+pint/2)
+    			arr.push([x,y])
+    		}
+    		ctx.fill()
+    		ctx.moveTo(arr[0][0],arr[0][1])
+    		for (var i = 1; i < arr.length; i++) {
+    			ctx.lineTo(arr[i][0],arr[i][1])
+
+    		}
+    		ctx.strokeStyle="red"
+    		ctx.stroke()
+
+ 			function random( min,max ){
+	 	 	 	return  Math.floor(Math.random()*(max-min))+min;
+	 	 	}
+
+     </script>
+    </body>
+</html>

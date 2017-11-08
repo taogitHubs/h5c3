@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<canvas width="600px" height="400px"></canvas>
+    	<script>
+    		var canvas=document.querySelector("canvas")
+    		var ctx=canvas.getContext("2d")
+    		// ctx.moveTo(300,0 )
+    		// ctx.lineTo(300, 400)
+    		// ctx.moveTo(0, 200)
+    		// ctx.lineTo(600, 200)
+    		// ctx.stroke()
+    		// ctx.beginPath()
+    		var num=5
+    		var du=-90
+    		var timer=setInterval(function(){
+    			ctx.clearRect(0, 0,canvas.width, canvas.height)
+    			ctx.beginPath()
+    			ctx.moveTo(300,200)
+    			ctx.arc(300, 200, 100,-Math.PI/2, aTor(du))
+    			ctx.fill()
+				du+=num
+				if(du>270){
+					ctx.clearRect(0, 0,canvas.width, canvas.height)
+					ctx.arc(300, 200, 100,-Math.PI/2, aTor(270))
+					ctx.fill()
+					clearInterval(timer)
+				}
+    		},20)
+
+    		// ctx.fill()
+    		 function aTor ( angle ) {
+		 	 	 return  angle*Math.PI/180;
+	 		 }
+
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	.box{
+        		width:600px;
+        		height:300px;
+        		border:1px solid #000;
+        		display:table-cell;
+        		text-align:center;
+        	}
+        	.box img{
+        		vartical-align:middle
+        	}
+        </style>
+    </head>
+    <body>
+    	<input type="file" name="">
+    	<div class="box">
+    		<img src="" alt="">
+    	</div>
+		<script type="text/javascript">
+			var file_btn=document.querySelector("input");
+			var img=document.querySelector("img");
+
+			file_btn.onchange=function(){
+				var file=this.files[0];
+				// console.log(file.type);
+				var str=file.type
+				if(str.split("/")[0]==="image"){
+					var read=new FileReader();
+					read.readAsDataURL(file);
+					read.onload=function(){
+						img.src=read.result
+					}
+				}else{
+					console.log("雷浩是傻逼")
+				}
+				
+			}
+		</script>
+    </body>
+</html>

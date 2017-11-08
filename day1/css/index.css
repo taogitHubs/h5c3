@@ -1,0 +1,656 @@
+.center{
+	width: 101px;
+	height: 101px;
+	position: fixed;
+	right: 20px;
+	top: 50px;
+	z-index: 10;
+}
+.down{
+	width: 174px;
+	height: 61px;
+	position: fixed;
+	bottom: 50px;
+	right: 20px;
+	z-index: 10;
+
+	animation:down 1s linear infinite alternate;
+}
+@keyframes down {
+	from{
+		bottom: 50px;
+	}
+	to{
+		bottom: 70px;
+	}
+}
+.section .screen01{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background:url("../img/01-bg.png") no-repeat bottom;
+}
+.screen01 .fly{
+	width: 470px;
+	height: 50px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%,50px);
+	animation: tu1_fly 1s linear infinite alternate;
+}
+@keyframes tu1_fly {
+	from{
+		transform: translate(-50%,50px);
+	}
+	to{
+		transform: translate(-50%,70px);
+	}
+}
+.screen01  .sofa {
+	width: 134px;
+	height: 147px;
+	position: absolute;
+	left: 50%;
+	top: 150px;
+	margin-left: -245px;
+
+	animation:tu1_sofa 0.8s linear infinite alternate
+}
+@keyframes tu1_sofa {
+	from{
+		top: 150px;
+	}
+	to{
+		top: 170px;
+
+	}
+}
+.screen01 .goods{
+	width: 824px;
+	height: 274px;
+	position: absolute;
+	left: 50%;
+	bottom: 100px;
+	margin-left: -400px;
+
+}
+/*--------------------第二屏开---------------------*/
+.section .screen02{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background:url("../img/02-bg.png") no-repeat bottom;
+}
+/*文字*/
+.section .screen02 .text{
+	width: 362px;
+	height: 27px;
+	position: absolute;
+	left: 50%;
+	margin-left: -180px;
+	bottom: 580px;
+}
+.section .screen02 .text img{
+	position: absolute;
+}
+.section .screen02 .text img:last-child{
+	opacity: 0;
+}
+.select .screen02 .text img:last-child{
+	animation: screen02_text 1s 1.5s  linear forwards;
+}
+@keyframes screen02_text {
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+/* 搜索 */
+.section .screen02 .search{
+	width: 222px;
+	height: 45px;
+	position: absolute;
+	left: 50%;
+	bottom: 300px;
+	transform: translateX(380px);
+	opacity: 0;
+}
+.select .screen02 .search{
+	animation: screen02_search 2s linear forwards;
+}
+@keyframes screen02_search {
+	from{
+		opacity: 0;
+		transform: translateX(380px);
+	}
+	25% {
+		opacity: 1;
+		transform: translateX(-120px);
+	}
+	75%{
+		opacity: 1;
+		transform: translateX(-120px);
+	}
+
+	to{
+		opacity:1;
+		transform: translateX(80px) translateY(-140px) scale(0.6);
+	}
+}
+.section .screen02 .search img{
+	position: absolute;
+}
+.section .screen02 .search img:last-child{
+	left: 90px;
+	top: 5px;
+	opacity: 0;
+
+}
+.select .screen02 .search img:last-child{
+	animation: screen02_img 1s 1s linear forwards;
+}
+@keyframes screen02_img {
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+/*  商品 */
+.section .screen02 .goods{
+	width: 441px;
+	height: 218px;
+	position: absolute;
+	left: 50%;
+	margin-left: -220px;
+	bottom: 210px;
+	transform-origin: bottom right;
+	transform: scale(0);
+}
+.section .screen02 .goods img{
+	position: absolute;
+}
+
+.select .screen02 .goods{
+	animation: screen02_goods 1s 1.5s linear forwards;
+}
+@keyframes screen02_goods {
+	from{
+		transform: scale(0);
+	}
+	to{
+		transform: scale(1);
+	}
+}
+.screen02 .tu2_sofa{
+	position: absolute;
+	left: 40%;
+	bottom: 300px;
+	transform: scale(0.5);
+	opacity: 0;
+	z-index: 10;
+}
+.screen02 .animate{
+	animation:tu2_sofa 1s linear;
+}
+@keyframes tu2_sofa {
+	from{
+		bottom: 300px;
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	to{
+		bottom: -500px;
+		transform: translate(-85px) scale(1);
+		opacity: 1;
+	}
+}
+
+/*------------------第三图---------------*/
+.screen03{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: url("../img/03-bg.png")no-repeat bottom;
+}
+/*change*/
+.screen03 .change{
+	width: 236px;
+	height: 131px;
+	position: absolute;
+	left:50%;
+	transform: translate(40px);
+	bottom: 200px;
+}
+
+.screen03 .change img{
+	position: absolute;
+}
+.screen03 .change img:last-child{
+	display: none;
+	/*z-index: 10;*/
+}
+/*沙发*/
+.screen03 .sofa{
+	position: absolute;
+	left:50%;
+	bottom: 258px;
+	transform: translate(-240px) scale(1);
+	display: none;
+}
+/*购物车*/
+.screen03 .car{
+	width: 218px;
+	height: 58px;
+	position: absolute;
+	left: 50%;
+	transform: translate(40px);
+	bottom: 130px;
+}
+.screen03 .car img{
+	position: absolute;
+}
+.screen03 .car img:last-child{
+	display: none;
+	/*z-index: 10;*/
+}
+
+/*隐藏的沙发*/
+.screen03 .ycsf{
+	position: absolute;
+	left:50%;
+	bottom: 250px;
+	transform: translate(-240px);
+	opacity: 0;
+	z-index: 10;
+}
+.screen03 .ycsf.animate{
+	animation: tu3_sofa 1s linear;
+}
+@keyframes tu3_sofa {
+	from{
+		opacity: 0;
+		bottom: 250px;
+		transform: translate(-240px);
+	}
+	to{
+		opacity: 1;
+		bottom: -536px;
+		transform: translate(-180px);
+	}
+}
+/*-----------------第四屏----------------*/
+.screen04{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background:url("../img/04-bg.png") no-repeat bottom;
+}
+/*云*/
+.screen04 .yun{
+	width: 822px;
+	height: 120px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-500px);
+}
+.screen04 .yun.animate {
+	animation: tu4_yun 5s linear infinite alternate;
+}
+ @keyframes tu4_yun {
+	 from{
+		 transform: translate(-500px);
+	 }
+	 to{
+		 transform:translate(200px);
+	 }
+ }
+
+/*车*/
+.screen04 .car{
+	width: 407px;
+	height: 346px;
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	transform:translate(-300px);
+	z-index: 11;
+	transition: all 1s linear;
+}
+.screen04 .car img{
+	position: absolute;
+}
+.screen04 .car img:first-child{
+	left: 122px;
+	top: -56px;
+	/*opacity: 0;*/
+	display: none;
+
+}
+.screen04 .car.animate{
+	transform: translate(800px);
+}
+
+
+/*文字*/
+.screen04 .txt{
+	width: 429px;
+	height: 32px;
+	position: absolute;
+	left: 50%;
+	bottom: 558px;
+	transform: translate(-50%);
+	/*opacity: 0;*/
+}
+.screen04 .txt img{
+	position: absolute;
+}
+.screen04 .txt img:last-child{
+	display: none;
+}
+
+/* 购物单*/
+.screen04 .address{
+	width: 283px;
+	height: 270px;
+	position: absolute;
+	left: 50%;
+	bottom: 280px;
+	transform: translate(-50%);
+	/*opacity: 0;*/
+	display: none;
+}
+.screen04 .address img{
+	position: absolute;
+}
+.screen04 .address img:last-child{
+	left: 50%;
+	transform: translate(-50%);
+	bottom: 160px;
+
+}
+
+/*----------------第五屏-----------*/
+.screen05 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	background:url("../img/05-bg.png");
+}
+.screen05 .text{
+	width: 514px;
+	height: 56px;
+	position: absolute;
+	top: 50px;
+	left:50%;
+	margin-left: -500px;
+
+}
+.screen05 .card{
+	width: 358px;
+	height: 221px;
+	position: absolute;
+	left:50%;
+	top: 230px;
+	margin-left:-600px;
+}
+.screen05 .card img{
+	position: absolute;
+}
+.screen05 .card img:nth-child(2){
+	bottom: 500px;
+	/*bottom: -150px;*/
+	left: 100px;
+}
+.select .screen05 .card img:nth-child(2){
+	animation: tu5_sofa 3s linear forwards;
+}
+@keyframes tu5_sofa {
+	from{
+		bottom: 500px;
+	}
+	25%{
+		bottom: 0;
+	}
+	to{
+		bottom: -150px;
+	}
+}
+.screen05 .card img:first-child{
+	bottom: 20px;
+	left: 100px;
+	/*bottom: 150px;*/
+}
+.select .screen05 .card img:first-child{
+	animation: order 1s 1s linear forwards;
+}
+@keyframes order {
+	from{
+		bottom: 20px;
+	}
+	to{
+		bottom: 150px;
+	}
+}
+.screen05 .mouse{
+	width: 250px;
+	height: 819px;
+	position: absolute;
+	left: 50%;
+	bottom: 260px;
+	transform: translate(320px);
+}
+.screen05 .mouse img{
+	position: absolute;
+}
+.screen05 .mouse img:nth-child(2){
+	opacity:0;
+}
+.select .screen05 .mouse img:nth-child(2){
+	animation:sbiao 0.5s 1s linear forwards;
+}
+@keyframes sbiao {
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+.screen05 .mouse img:last-child{
+	bottom: -650px;
+	left: -20px;
+}
+.select .screen05 .mouse img:last-child{
+	animation:shou 0.8s 0.5s linear forwards;
+ }
+@keyframes shou {
+	from{
+		bottom:-650px;
+	}
+	to{
+		bottom: -230px;
+	}
+}
+
+
+/*-------------------第六图------------------*/
+.screen06{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background:url("../img/06-bg.png") no-repeat -392px bottom;
+	transition:all 1s linear;
+}
+.screen06.animate{
+	background-position: right bottom;
+}
+.screen06 .tu6sf{
+	position: absolute;
+	left: 50%;
+	transform: translate(-200px) scale(1);
+	top: -200px;
+	opacity:0;
+}
+.screen06 .tu6sf.animate{
+	animation:tu5_tu6 1s linear;
+}
+@keyframes tu5_tu6{
+	from {
+		opacity: 1;
+		bottom: 0;
+
+		transform:translate(-200px) scale(1);
+	}
+	to {
+		opacity: 1;
+		top: 200px;
+		transform:translate(-280px) scale(0.2);
+	}
+}
+/* 云*/
+.screen06 .cloud{
+	width: 800px;
+	height:170px;
+	position: absolute;
+	left:50%;
+	transform: translate(-500px);
+}
+.screen06 .cloud img{
+	position: absolute;
+}
+.screen06 .cloud.animate img:first-child{
+	animation: tu6_yun 8s linear infinite alternate;
+}
+.screen06 .cloud.animate img:last-child{
+	animation: tu6_yun 5s linear infinite alternate;
+}
+@keyframes tu6_yun {
+	from{
+		transform: translate(-662px);
+	}
+	to {
+		transform: translate(300px);
+	}
+}
+.screen06 .text{
+	width: 308px;
+	height: 59px;
+	position: absolute;
+	left: 50%;
+	bottom: 540px;
+	transform: translate(-120px);
+}
+.screen06 .text img{
+	position: absolute;
+}
+.screen06 .text img:last-child{
+	opacity: 0;
+}
+.screen06 .text.animate img:last-child{
+	opacity: 1;
+}
+.screen06 .car{
+	width: 221px;
+	height: 122px;
+	position:absolute;
+	bottom: 85px;
+	left:50%;
+	transform:translate(-220px);
+}
+.screen06 .car img{
+	position: absolute;
+}
+.screen06 .car .workerImg{
+	top: -200px;
+	transform-origin: left bottom;
+	transform: translate(0px) scale(0);
+	transition: all 1s linear;
+}
+.screen06 .car .workerImg.animate{
+
+	transform: translate(250px) scale(1);
+}
+.screen06 .car .buyerImg{
+	top: -60px;
+	transform: translate(60px);
+}
+.screen06 .car .addressImg{
+	top: -60px;
+	transform: translate(60px);
+	opacity: 0;
+}
+.screen06 .car .addressImg.animate{
+	opacity: 1;
+}
+.screen06 .car .sayImg{
+	top: -325px;
+	transform: translate(380px);
+	opacity: 0;
+}
+.screen06 .car .sayImg.animate{
+	opacity: 1;
+}
+
+.screen06 .package{
+	width: 123px;
+	height: 85px;
+	position: absolute;
+	left:50%;
+	top: 230px;
+	margin-left: -900px;
+}
+.screen06 .package.animate{
+	animation: heizi 2s linear ;
+}
+@keyframes heizi {
+	from{
+		margin-left: -900px;
+		top: 230px;
+		transform:translate(1);
+	}
+	50%{
+		margin-left: -220px;
+		top: 230px;
+		transform:translate(1);
+	}
+	to{
+		margin-left: -220px;
+		top: 550px;
+		transform:translate(0);
+	}
+
+}
+/*门*/
+.screen06 .person{
+	width: 106px;
+	height: 150px;
+	position: absolute;
+	right: 285px;
+	bottom: 116px;
+}
+.screen06 .person img{
+	position: absolute;
+}
+.screen06 .person img:first-child{
+	opacity: 0;
+}
+.screen06 .person.animate img:first-child{
+	opacity: 1;
+}
+.screen06 .person img:last-child{
+	transform-origin: right bottom;
+	bottom: -9px;
+	transform: scale(0);
+	transition: all 1s 1s linear;
+}
+.screen06 .person.animate img:last-child{
+	transform: scale(1);
+	left:-20px
+}
+
